@@ -33,8 +33,6 @@ struct LogInView: View {
     }
 }
 
-//CA5CDD
-
 struct LogInView_Previews: PreviewProvider {
     static var previews: some View {
         LogInView()
