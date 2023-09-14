@@ -1,0 +1,588 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CEB35FFA2AB2C5AA007A69B1 /* Talkaway_AIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB35FF92AB2C5AA007A69B1 /* Talkaway_AIApp.swift */; };
+		CEB35FFC2AB2C5AA007A69B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB35FFB2AB2C5AA007A69B1 /* ContentView.swift */; };
+		CEB35FFE2AB2C5AC007A69B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB35FFD2AB2C5AC007A69B1 /* Assets.xcassets */; };
+		CEB360012AB2C5AC007A69B1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB360002AB2C5AC007A69B1 /* Preview Assets.xcassets */; };
+		CEB3600B2AB2C5AC007A69B1 /* Talkaway_AITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3600A2AB2C5AC007A69B1 /* Talkaway_AITests.swift */; };
+		CEB360152AB2C5AC007A69B1 /* Talkaway_AIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB360142AB2C5AC007A69B1 /* Talkaway_AIUITests.swift */; };
+		CEB360172AB2C5AC007A69B1 /* Talkaway_AIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB360162AB2C5AC007A69B1 /* Talkaway_AIUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEB360072AB2C5AC007A69B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEB35FEE2AB2C5AA007A69B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEB35FF52AB2C5AA007A69B1;
+			remoteInfo = Talkaway_AI;
+		};
+		CEB360112AB2C5AC007A69B1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CEB35FEE2AB2C5AA007A69B1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEB35FF52AB2C5AA007A69B1;
+			remoteInfo = Talkaway_AI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		CEB35FF62AB2C5AA007A69B1 /* Talkaway_AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talkaway_AI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB35FF92AB2C5AA007A69B1 /* Talkaway_AIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talkaway_AIApp.swift; sourceTree = "<group>"; };
+		CEB35FFB2AB2C5AA007A69B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		CEB35FFD2AB2C5AC007A69B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEB360002AB2C5AC007A69B1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEB360062AB2C5AC007A69B1 /* Talkaway_AITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Talkaway_AITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB3600A2AB2C5AC007A69B1 /* Talkaway_AITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talkaway_AITests.swift; sourceTree = "<group>"; };
+		CEB360102AB2C5AC007A69B1 /* Talkaway_AIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Talkaway_AIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEB360142AB2C5AC007A69B1 /* Talkaway_AIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talkaway_AIUITests.swift; sourceTree = "<group>"; };
+		CEB360162AB2C5AC007A69B1 /* Talkaway_AIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talkaway_AIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CEB35FF32AB2C5AA007A69B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB360032AB2C5AC007A69B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB3600D2AB2C5AC007A69B1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CEB35FED2AB2C5AA007A69B1 = {
+			isa = PBXGroup;
+			children = (
+				CEB35FF82AB2C5AA007A69B1 /* Talkaway_AI */,
+				CEB360092AB2C5AC007A69B1 /* Talkaway_AITests */,
+				CEB360132AB2C5AC007A69B1 /* Talkaway_AIUITests */,
+				CEB35FF72AB2C5AA007A69B1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CEB35FF72AB2C5AA007A69B1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CEB35FF62AB2C5AA007A69B1 /* Talkaway_AI.app */,
+				CEB360062AB2C5AC007A69B1 /* Talkaway_AITests.xctest */,
+				CEB360102AB2C5AC007A69B1 /* Talkaway_AIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CEB35FF82AB2C5AA007A69B1 /* Talkaway_AI */ = {
+			isa = PBXGroup;
+			children = (
+				CEB35FF92AB2C5AA007A69B1 /* Talkaway_AIApp.swift */,
+				CEB35FFB2AB2C5AA007A69B1 /* ContentView.swift */,
+				CEB35FFD2AB2C5AC007A69B1 /* Assets.xcassets */,
+				CEB35FFF2AB2C5AC007A69B1 /* Preview Content */,
+			);
+			path = Talkaway_AI;
+			sourceTree = "<group>";
+		};
+		CEB35FFF2AB2C5AC007A69B1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CEB360002AB2C5AC007A69B1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CEB360092AB2C5AC007A69B1 /* Talkaway_AITests */ = {
+			isa = PBXGroup;
+			children = (
+				CEB3600A2AB2C5AC007A69B1 /* Talkaway_AITests.swift */,
+			);
+			path = Talkaway_AITests;
+			sourceTree = "<group>";
+		};
+		CEB360132AB2C5AC007A69B1 /* Talkaway_AIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				CEB360142AB2C5AC007A69B1 /* Talkaway_AIUITests.swift */,
+				CEB360162AB2C5AC007A69B1 /* Talkaway_AIUITestsLaunchTests.swift */,
+			);
+			path = Talkaway_AIUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CEB35FF52AB2C5AA007A69B1 /* Talkaway_AI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB3601A2AB2C5AC007A69B1 /* Build configuration list for PBXNativeTarget "Talkaway_AI" */;
+			buildPhases = (
+				CEB35FF22AB2C5AA007A69B1 /* Sources */,
+				CEB35FF32AB2C5AA007A69B1 /* Frameworks */,
+				CEB35FF42AB2C5AA007A69B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Talkaway_AI;
+			productName = Talkaway_AI;
+			productReference = CEB35FF62AB2C5AA007A69B1 /* Talkaway_AI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEB360052AB2C5AC007A69B1 /* Talkaway_AITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB3601D2AB2C5AC007A69B1 /* Build configuration list for PBXNativeTarget "Talkaway_AITests" */;
+			buildPhases = (
+				CEB360022AB2C5AC007A69B1 /* Sources */,
+				CEB360032AB2C5AC007A69B1 /* Frameworks */,
+				CEB360042AB2C5AC007A69B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEB360082AB2C5AC007A69B1 /* PBXTargetDependency */,
+			);
+			name = Talkaway_AITests;
+			productName = Talkaway_AITests;
+			productReference = CEB360062AB2C5AC007A69B1 /* Talkaway_AITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CEB3600F2AB2C5AC007A69B1 /* Talkaway_AIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEB360202AB2C5AC007A69B1 /* Build configuration list for PBXNativeTarget "Talkaway_AIUITests" */;
+			buildPhases = (
+				CEB3600C2AB2C5AC007A69B1 /* Sources */,
+				CEB3600D2AB2C5AC007A69B1 /* Frameworks */,
+				CEB3600E2AB2C5AC007A69B1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEB360122AB2C5AC007A69B1 /* PBXTargetDependency */,
+			);
+			name = Talkaway_AIUITests;
+			productName = Talkaway_AIUITests;
+			productReference = CEB360102AB2C5AC007A69B1 /* Talkaway_AIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CEB35FEE2AB2C5AA007A69B1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					CEB35FF52AB2C5AA007A69B1 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					CEB360052AB2C5AC007A69B1 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = CEB35FF52AB2C5AA007A69B1;
+					};
+					CEB3600F2AB2C5AC007A69B1 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = CEB35FF52AB2C5AA007A69B1;
+					};
+				};
+			};
+			buildConfigurationList = CEB35FF12AB2C5AA007A69B1 /* Build configuration list for PBXProject "Talkaway_AI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CEB35FED2AB2C5AA007A69B1;
+			productRefGroup = CEB35FF72AB2C5AA007A69B1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CEB35FF52AB2C5AA007A69B1 /* Talkaway_AI */,
+				CEB360052AB2C5AC007A69B1 /* Talkaway_AITests */,
+				CEB3600F2AB2C5AC007A69B1 /* Talkaway_AIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CEB35FF42AB2C5AA007A69B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB360012AB2C5AC007A69B1 /* Preview Assets.xcassets in Resources */,
+				CEB35FFE2AB2C5AC007A69B1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB360042AB2C5AC007A69B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB3600E2AB2C5AC007A69B1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CEB35FF22AB2C5AA007A69B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB35FFC2AB2C5AA007A69B1 /* ContentView.swift in Sources */,
+				CEB35FFA2AB2C5AA007A69B1 /* Talkaway_AIApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB360022AB2C5AC007A69B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB3600B2AB2C5AC007A69B1 /* Talkaway_AITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEB3600C2AB2C5AC007A69B1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB360172AB2C5AC007A69B1 /* Talkaway_AIUITestsLaunchTests.swift in Sources */,
+				CEB360152AB2C5AC007A69B1 /* Talkaway_AIUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEB360082AB2C5AC007A69B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEB35FF52AB2C5AA007A69B1 /* Talkaway_AI */;
+			targetProxy = CEB360072AB2C5AC007A69B1 /* PBXContainerItemProxy */;
+		};
+		CEB360122AB2C5AC007A69B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEB35FF52AB2C5AA007A69B1 /* Talkaway_AI */;
+			targetProxy = CEB360112AB2C5AC007A69B1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		CEB360182AB2C5AC007A69B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CEB360192AB2C5AC007A69B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CEB3601B2AB2C5AC007A69B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Talkaway_AI/Preview Content\"";
+				DEVELOPMENT_TEAM = KV852X9FTN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AIlearning.Talkaway-AI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CEB3601C2AB2C5AC007A69B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Talkaway_AI/Preview Content\"";
+				DEVELOPMENT_TEAM = KV852X9FTN;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AIlearning.Talkaway-AI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CEB3601E2AB2C5AC007A69B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KV852X9FTN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AIlearning.Talkaway-AITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Talkaway_AI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Talkaway_AI";
+			};
+			name = Debug;
+		};
+		CEB3601F2AB2C5AC007A69B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KV852X9FTN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AIlearning.Talkaway-AITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Talkaway_AI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Talkaway_AI";
+			};
+			name = Release;
+		};
+		CEB360212AB2C5AC007A69B1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KV852X9FTN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AIlearning.Talkaway-AIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Talkaway_AI;
+			};
+			name = Debug;
+		};
+		CEB360222AB2C5AC007A69B1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KV852X9FTN;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AIlearning.Talkaway-AIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Talkaway_AI;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CEB35FF12AB2C5AA007A69B1 /* Build configuration list for PBXProject "Talkaway_AI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB360182AB2C5AC007A69B1 /* Debug */,
+				CEB360192AB2C5AC007A69B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB3601A2AB2C5AC007A69B1 /* Build configuration list for PBXNativeTarget "Talkaway_AI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB3601B2AB2C5AC007A69B1 /* Debug */,
+				CEB3601C2AB2C5AC007A69B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB3601D2AB2C5AC007A69B1 /* Build configuration list for PBXNativeTarget "Talkaway_AITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB3601E2AB2C5AC007A69B1 /* Debug */,
+				CEB3601F2AB2C5AC007A69B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEB360202AB2C5AC007A69B1 /* Build configuration list for PBXNativeTarget "Talkaway_AIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEB360212AB2C5AC007A69B1 /* Debug */,
+				CEB360222AB2C5AC007A69B1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CEB35FEE2AB2C5AA007A69B1 /* Project object */;
+}
