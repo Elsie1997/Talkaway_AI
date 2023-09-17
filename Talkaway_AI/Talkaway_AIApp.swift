@@ -11,8 +11,7 @@ import SwiftUI
 struct Talkaway_AIApp: App {
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            HomeView()
+            ContentView()
         }
     }
 }

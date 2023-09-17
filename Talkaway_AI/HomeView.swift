@@ -6,15 +6,24 @@
 //
 import SwiftUI
 
+
 struct HomeView: View {
+    var topics: [Topic] = [
+        Topic(name: "旅遊", iconName: "airplane"),
+        Topic(name: "運動", iconName: "figure.walk"),
+        Topic(name: "學習", iconName: "a.book.closed.fill"),
+        Topic(name: "娛樂", iconName: "gamecontroller"),
+        Topic(name: "時事", iconName: "play.tv"),
+        Topic(name: "購物", iconName: "smiley"),
+        Topic(name: "事業", iconName: "suitcase"),
+        Topic(name: "社交", iconName: "person.and.person.fill"),
+        Topic(name: "美食", iconName: "fork.knife"),
+    ]
+    
     @State private var showingImagePicker = false
     @State private var userImage: UIImage?
-    @State private var topicIndex = 0
-    var topics = [
-        "旅遊", "運動", "學習",
-        "娛樂", "時事", "購物",
-        "事業", "社交", "美食"
-    ]
+    @State private var selectedTopicIndex: Int = 0
+    @State private var isTopicSelectorPresented: Bool = false
     
     var body: some View {
         // 支援導向其他view(能被導向的view元素都應該放在這裡面)
@@ -38,12 +47,13 @@ struct HomeView: View {
                         .resizable()
                         .scaledToFill()
                         .frame(width: 250, height: 250)
+                        .background(Circle().fill(Color(hex: 0xD8BFD8)))
                         .clipShape(Circle())
                         .overlay(
                             Circle().stroke(Color.black, lineWidth: 2)
                         )
                         .padding(.bottom, 20)
-                        .offset(y:  -50)
+                        .offset(y: -50)
                         .onTapGesture {
                             showingImagePicker = true
 
@@ -52,10 +62,25 @@ struct HomeView: View {
                 
                 // 把Text 和 旁邊的按鈕放在一行上
                 HStack {
-                    Text("今天來聊聊\(topics[topicIndex])")
+                    Text("今天來聊聊")
                     
                     Button(action: {
-                        topicIndex = (topicIndex + 1) % topics.count
+                        isTopicSelectorPresented.toggle()
+                    }) {
+                        Text(topics[selectedTopicIndex].name)
+                            .font(.headline)
+                            .background(Color(hex: 0xD8BFD8))
+                    }
+                    .sheet(isPresented: $isTopicSelectorPresented) {
+                        TopicSelectorView(
+                            selectedTopicIndex: $selectedTopicIndex,
+                            isTopicSelectorPresented: $isTopicSelectorPresented,
+                            topics: topics
+                        )
+                    }
+                    
+                    Button(action: {
+                        selectedTopicIndex = (selectedTopicIndex + 1) % topics.count
                     }) {
                         Image(systemName: "arrow.2.circlepath")
                             .resizable()
@@ -87,7 +112,6 @@ struct HomeView: View {
                 }.disabled(true)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Color(hex:0xCA5CDD))
             .sheet(isPresented: $showingImagePicker) {
                 ImagePicker(selectedImage: $userImage)
             }
@@ -116,7 +140,6 @@ struct AdvicePage: View {
         }
     }
 }
-
 
 
 struct HomeView_Previews: PreviewProvider {
