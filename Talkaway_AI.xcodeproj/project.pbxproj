@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E289E022AB6DD6C00D338B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E289E012AB6DD6C00D338B2 /* HomeView.swift */; };
+		4E289E042AB6F02600D338B2 /* ImgaePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E289E032AB6F02600D338B2 /* ImgaePicker.swift */; };
 		CEB35FFA2AB2C5AA007A69B1 /* Talkaway_AIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB35FF92AB2C5AA007A69B1 /* Talkaway_AIApp.swift */; };
 		CEB35FFC2AB2C5AA007A69B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB35FFB2AB2C5AA007A69B1 /* ContentView.swift */; };
 		CEB35FFE2AB2C5AC007A69B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB35FFD2AB2C5AC007A69B1 /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E289E012AB6DD6C00D338B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4E289E032AB6F02600D338B2 /* ImgaePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgaePicker.swift; sourceTree = "<group>"; };
 		CEB35FF62AB2C5AA007A69B1 /* Talkaway_AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talkaway_AI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB35FF92AB2C5AA007A69B1 /* Talkaway_AIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talkaway_AIApp.swift; sourceTree = "<group>"; };
 		CEB35FFB2AB2C5AA007A69B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -102,8 +106,10 @@
 				CEB35FFB2AB2C5AA007A69B1 /* ContentView.swift */,
 				CEB360252AB2C64F007A69B1 /* LogInView.swift */,
 				CEB360232AB2C60A007A69B1 /* SignUpView.swift */,
+				4E289E012AB6DD6C00D338B2 /* HomeView.swift */,
 				CEB35FFD2AB2C5AC007A69B1 /* Assets.xcassets */,
 				CEB35FFF2AB2C5AC007A69B1 /* Preview Content */,
+				4E289E032AB6F02600D338B2 /* ImgaePicker.swift */,
 			);
 			path = Talkaway_AI;
 			sourceTree = "<group>";
@@ -264,8 +270,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEB35FFC2AB2C5AA007A69B1 /* ContentView.swift in Sources */,
+				4E289E042AB6F02600D338B2 /* ImgaePicker.swift in Sources */,
 				CEB360242AB2C60A007A69B1 /* SignUpView.swift in Sources */,
 				CEB360262AB2C64F007A69B1 /* LogInView.swift in Sources */,
+				4E289E022AB6DD6C00D338B2 /* HomeView.swift in Sources */,
 				CEB35FFA2AB2C5AA007A69B1 /* Talkaway_AIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
