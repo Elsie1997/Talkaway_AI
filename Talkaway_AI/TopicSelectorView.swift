@@ -12,6 +12,7 @@ struct Topic {
     let iconName: String
 }
 
+
 struct TopicSelectorView: View {
     @Binding var selectedTopicIndex: Int
     @Binding var isTopicSelectorPresented: Bool
@@ -24,22 +25,26 @@ struct TopicSelectorView: View {
             GridItem(.flexible())
         ]
         
-        ScrollView {
-            LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(0..<topics.count, id: \.self) { index in
-                    Button(action: {
-                        selectedTopicIndex = index
-                        isTopicSelectorPresented = false
-                    }) {
-                        VStack {
-                            Image(systemName: topics[index].iconName)
-                            Text(topics[index].name)
+        GeometryReader { geometry in
+            VStack{
+                Spacer()
+                LazyVGrid(columns: columns, spacing: 20) {
+                    ForEach(0..<topics.count, id: \.self) { index in
+                        Button(action: {
+                            selectedTopicIndex = index
+                            isTopicSelectorPresented = false
+                        }) {
+                            VStack {
+                                Image(systemName: topics[index].iconName)
+                                Text(topics[index].name)
+                            }
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(8)
                         }
-                        .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(8)
                     }
                 }
+                Spacer()
             }
         }
     }
