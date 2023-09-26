@@ -19,10 +19,9 @@ extension Color {
 struct ContentView: View {
     var body: some View {
         VStack {
-            Image("logo").resizable().frame(width: 180, height: 180)
-            //Spacer().frame(height: 10)
+            Image("logo").resizable().frame(width: 180, height: 180).padding(.bottom, -50)
             Text("Talkaway").font(.system(size: 50,weight: .bold)).foregroundStyle(.white)
-            Spacer().frame(height: 25)
+            Spacer().frame(height: 75)
             
             VStack{
                 Text("隨時隨地,在您身邊。")
@@ -35,8 +34,9 @@ struct ContentView: View {
             label: {
                 Text("啟動旅程                   ").padding().background(Color(hex:0x0096FF)).font(.system(size:26.5, weight: .bold)).foregroundStyle(.white)
             }.clipShape(Capsule()).controlSize(.large)
+            Spacer().frame(height: 30)
             NavigationLink(destination: LogInView()) {
-                Text("我已經有Talkaway帳號").font(.system(size:21)).foregroundStyle(.white)
+                Text("我已經有Talkaway帳號").font(.system(size:23)).foregroundStyle(.white)
                 }
         }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(hex:0xCC00CC))
         }
