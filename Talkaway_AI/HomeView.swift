@@ -29,38 +29,13 @@ struct HomeView: View {
         // 支援導向其他view(能被導向的view元素都應該放在這裡面)
         NavigationView {
             ZStack{
+                Text("歡迎回來！")
+                    .bold(true)
+                    .font(.system(size: 25))
+                    .padding([.top, .leading], -150)
+                    .padding(.top, -180)
+                
                 VStack {
-                    // Avatar
-                    if let img = userImage{
-                        Image(uiImage: img)
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 250, height: 250)
-                            .clipShape(Circle())
-                            .overlay(
-                                Circle().stroke(Color.black, lineWidth: 2)
-                            )
-                            .onTapGesture {
-                                showingImagePicker = true
-                            }
-                    } else {
-                        Image("logo")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 250, height: 250)
-                            .background(Circle().fill(Color(hex: 0xD8BFD8)))
-                            .clipShape(Circle())
-                            .overlay(
-                                Circle().stroke(Color.black, lineWidth: 2)
-                            )
-                            .padding(.bottom, 20)
-                            .offset(y: -50)
-                            .onTapGesture {
-                                showingImagePicker = true
-                                
-                            }
-                    }
-                    
                     // 把Text 和 旁邊的按鈕放在一行上
                     HStack {
                         Text("今天來聊聊")
@@ -82,34 +57,43 @@ struct HomeView: View {
                                 .foregroundColor(.black)
                         }
                     }
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 50)
                     
                     // 首頁導向按鈕
                     NavigationLink(destination: FeaturePage()) {
                         Text("前往談話")
                             .font(.headline)
-                            .frame(width: 200, height: 25)
+                            .frame(width: 200, height: 14)
                             .padding()
                             .background(Color.blue)
                             .foregroundColor(.white)
                             .cornerRadius(15)
                     }
+                    .padding(.bottom, 8)
                     
                     NavigationLink(destination: AdvicePage()) {
                         Text("改善建議")
                             .font(.headline)
-                            .frame(width: 200, height: 25)
+                            .frame(width: 200, height: 15)
                             .padding()
                             .background(Color.gray)
                             .foregroundColor(.white)
                             .cornerRadius(15)
-                    }.disabled(true)
+                    }
+                    .disabled(true)
+                        
+                    
                 }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .frame(
+                    maxWidth: .infinity,
+                    maxHeight: .infinity
+                )
                 .sheet(isPresented: $showingImagePicker) {
                     ImagePicker(selectedImage: $userImage)
                 }
                 .blur(radius: isTopicSelectorPresented ? 10: 0)
+                .padding(.bottom, -150)
+                .offset(y: -50)
                 
                 // 懸浮九宮格視窗
                 if isTopicSelectorPresented {
@@ -125,10 +109,6 @@ struct HomeView: View {
                 }
             }
         }
-    } 
-    
-    func loadImage() {
-        // 可加入你想要的處理圖片後的動作。
     }
 }
 
