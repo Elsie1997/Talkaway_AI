@@ -29,7 +29,7 @@ struct LogInView: View {
             }
             .buttonStyle(.borderedProminent).controlSize(.large)
             
-        }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(hex:0xCA5CDD))
+        }.frame(maxWidth: .infinity, maxHeight: .infinity).background(Color(hex:0xE4C8DE))
     }
 }
 

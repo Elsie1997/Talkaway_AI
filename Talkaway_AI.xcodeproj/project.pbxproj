@@ -19,6 +19,7 @@
 		CEB360172AB2C5AC007A69B1 /* Talkaway_AIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB360162AB2C5AC007A69B1 /* Talkaway_AIUITestsLaunchTests.swift */; };
 		CEB360242AB2C60A007A69B1 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB360232AB2C60A007A69B1 /* SignUpView.swift */; };
 		CEB360262AB2C64F007A69B1 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB360252AB2C64F007A69B1 /* LogInView.swift */; };
+		CEB360282AC2FE2B007A69B1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB360272AC2FE2B007A69B1 /* LoadingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		CEB360162AB2C5AC007A69B1 /* Talkaway_AIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talkaway_AIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		CEB360232AB2C60A007A69B1 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		CEB360252AB2C64F007A69B1 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
+		CEB360272AC2FE2B007A69B1 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
