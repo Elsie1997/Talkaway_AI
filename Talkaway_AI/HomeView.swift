@@ -8,27 +8,22 @@ import SwiftUI
 
 
 struct HomeView: View {
-    var topics: [Topic] = [
-        Topic(name: "旅遊", iconName: "airplane"),
-        Topic(name: "運動", iconName: "figure.walk"),
-        Topic(name: "學習", iconName: "a.book.closed.fill"),
-        Topic(name: "娛樂", iconName: "gamecontroller"),
-        Topic(name: "時事", iconName: "play.tv"),
-        Topic(name: "購物", iconName: "smiley"),
-        Topic(name: "事業", iconName: "suitcase"),
-        Topic(name: "社交", iconName: "person.and.person.fill"),
-        Topic(name: "美食", iconName: "fork.knife"),
-    ]
+    @ObservedObject var chatScenarioViewModel = ChatScenarioViewModel()
     
-    @State private var showingImagePicker = false
-    @State private var userImage: UIImage?
-    @State private var selectedTopicIndex: Int = 0
     @State private var isTopicSelectorPresented: Bool = false
     
     var body: some View {
         // 支援導向其他view(能被導向的view元素都應該放在這裡面)
         NavigationView {
             ZStack{
+                // 這是一個佔滿畫面的透明按鈕，當點擊時，它會關閉懸浮九宮格
+                Button(action: {
+                    isTopicSelectorPresented = false
+                }) {
+                    Color.clear
+                        .edgesIgnoringSafeArea(.all)
+                }
+                
                 Text("歡迎回來！")
                     .bold(true)
                     .font(.system(size: 25))
@@ -43,13 +38,13 @@ struct HomeView: View {
                         Button(action: {
                             isTopicSelectorPresented.toggle()
                         }) {
-                            Text(topics[selectedTopicIndex].name)
+                            Text(chatScenarioViewModel.currentScenario?.topic ?? "選擇主題")
                                 .font(.headline)
                                 .background(Color(hex: 0xD8BFD8))
                         }
                         
                         Button(action: {
-                            selectedTopicIndex = (selectedTopicIndex + 1) % topics.count
+                            chatScenarioViewModel.randomScenario()
                         }) {
                             Image(systemName: "arrow.2.circlepath")
                                 .resizable()
@@ -60,7 +55,7 @@ struct HomeView: View {
                     .padding(.bottom, 50)
                     
                     // 首頁導向按鈕
-                    NavigationLink(destination: FeaturePage()) {
+                    NavigationLink(destination:  ChatView(selectedChatScenario: chatScenarioViewModel.currentScenario!)) {
                         Text("前往談話")
                             .font(.headline)
                             .frame(width: 200, height: 14)
@@ -88,36 +83,25 @@ struct HomeView: View {
                     maxWidth: .infinity,
                     maxHeight: .infinity
                 )
-                .sheet(isPresented: $showingImagePicker) {
-                    ImagePicker(selectedImage: $userImage)
-                }
                 .blur(radius: isTopicSelectorPresented ? 10: 0)
                 .padding(.bottom, -150)
                 .offset(y: -50)
                 
+                
+                
                 // 懸浮九宮格視窗
                 if isTopicSelectorPresented {
                     TopicSelectorView(
-                        selectedTopicIndex: $selectedTopicIndex,
+                        currentScenario: $chatScenarioViewModel.currentScenario,
                         isTopicSelectorPresented: $isTopicSelectorPresented,
-                        topics: topics
+                        scenarios: chatScenarioViewModel.scenarios
                     )
-                    .frame(width: 280, height: 300)
+                    .frame(width: 280, height: 350)
                     .background(Color.white)
                     .cornerRadius(15)
                     .shadow(radius: 10)
                 }
             }
-        }
-    }
-}
-
-
-// TODO
-struct FeaturePage: View {
-    var body: some View {
-        VStack {
-            Text("開始談話功能")
         }
     }
 }
