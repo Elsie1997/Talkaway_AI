@@ -39,8 +39,8 @@ struct HomeView: View {
                             isTopicSelectorPresented.toggle()
                         }) {
                             Text(chatScenarioViewModel.currentScenario?.topic ?? "選擇主題")
-                                .font(.headline)
-                                .background(Color(hex: 0xD8BFD8))
+                                .font(.system(size: 20))
+                                
                         }
                         
                         Button(action: {
