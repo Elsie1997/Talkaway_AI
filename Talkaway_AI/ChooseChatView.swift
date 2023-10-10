@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct ChatView: View {
+struct ChooseChatView: View {
     var selectedChatScenario: ChatScenario
     
     @State private var selectedLevel = "初級"
@@ -58,7 +58,7 @@ struct ChatView: View {
                 .foregroundColor(Color.gray)
             
             // 開始談話按鈕
-            NavigationLink(destination: ChatingPage()) {
+            NavigationLink(destination: CheatingView()) {
                 Text("開始談話")
                     .font(.headline)
                     .frame(width: 200, height: 14)
@@ -77,19 +77,11 @@ struct ChatView: View {
     }
 }
 
-struct ChatingPage: View {
-    var body: some View {
-        VStack {
-            Text("我 還 沒 做")
-        }
-    }
-}
-
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
         //randomElement()返回的是Optional，必須提供一個默認值 或 unwrap它。
         let previewScenario = ChatScenarioViewModel().scenarios.randomElement() ?? ChatScenario(topic: "--", iconName: "questionmark", content: ["--"])
         
-        ChatView(selectedChatScenario: previewScenario)
+        ChooseChatView(selectedChatScenario: previewScenario)
     }
 }

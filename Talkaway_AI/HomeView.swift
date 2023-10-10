@@ -55,7 +55,7 @@ struct HomeView: View {
                     .padding(.bottom, 50)
                     
                     // 首頁導向按鈕
-                    NavigationLink(destination:  ChatView(selectedChatScenario: chatScenarioViewModel.currentScenario!)) {
+                    NavigationLink(destination:  ChooseChatView(selectedChatScenario: chatScenarioViewModel.currentScenario!)) {
                         Text("前往談話")
                             .font(.headline)
                             .frame(width: 200, height: 14)

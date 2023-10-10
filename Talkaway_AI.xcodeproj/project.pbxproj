@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E2626802AC7EEBC002A3149 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E26267F2AC7EEBC002A3149 /* Models.swift */; };
+		4E108E3F2AD539A5008293E5 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E108E3E2AD539A5008293E5 /* SpeechRecognizer.swift */; };
+		4E2626802AC7EEBC002A3149 /* ChatScenario.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E26267F2AC7EEBC002A3149 /* ChatScenario.swift */; };
 		4E2626822AC7EF12002A3149 /* ChatScenarioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2626812AC7EF12002A3149 /* ChatScenarioViewModel.swift */; };
+		4E2626862ACAFE4D002A3149 /* CheatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2626852ACAFE4D002A3149 /* CheatingView.swift */; };
 		4E289E022AB6DD6C00D338B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E289E012AB6DD6C00D338B2 /* HomeView.swift */; };
 		4E289E042AB6F02600D338B2 /* ImgaePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E289E032AB6F02600D338B2 /* ImgaePicker.swift */; };
 		4E289E062AB73DFC00D338B2 /* TopicSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E289E052AB73DFC00D338B2 /* TopicSelectorView.swift */; };
-		4E7BDD232AC70F170014376E /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BDD222AC70F170014376E /* ChatView.swift */; };
+		4E7BDD232AC70F170014376E /* ChooseChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BDD222AC70F170014376E /* ChooseChatView.swift */; };
 		CEB35FFA2AB2C5AA007A69B1 /* Talkaway_AIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB35FF92AB2C5AA007A69B1 /* Talkaway_AIApp.swift */; };
 		CEB35FFC2AB2C5AA007A69B1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB35FFB2AB2C5AA007A69B1 /* ContentView.swift */; };
 		CEB35FFE2AB2C5AC007A69B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEB35FFD2AB2C5AC007A69B1 /* Assets.xcassets */; };
@@ -42,12 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4E26267F2AC7EEBC002A3149 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		4E108E3D2AD5379F008293E5 /* Talkaway-AI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Talkaway-AI-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4E108E3E2AD539A5008293E5 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		4E26267F2AC7EEBC002A3149 /* ChatScenario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScenario.swift; sourceTree = "<group>"; };
 		4E2626812AC7EF12002A3149 /* ChatScenarioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScenarioViewModel.swift; sourceTree = "<group>"; };
+		4E2626852ACAFE4D002A3149 /* CheatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheatingView.swift; sourceTree = "<group>"; };
 		4E289E012AB6DD6C00D338B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4E289E032AB6F02600D338B2 /* ImgaePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgaePicker.swift; sourceTree = "<group>"; };
 		4E289E052AB73DFC00D338B2 /* TopicSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicSelectorView.swift; sourceTree = "<group>"; };
-		4E7BDD222AC70F170014376E /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		4E7BDD222AC70F170014376E /* ChooseChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseChatView.swift; sourceTree = "<group>"; };
 		CEB35FF62AB2C5AA007A69B1 /* Talkaway_AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talkaway_AI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB35FF92AB2C5AA007A69B1 /* Talkaway_AIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talkaway_AIApp.swift; sourceTree = "<group>"; };
 		CEB35FFB2AB2C5AA007A69B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E108E402AD53D5F008293E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4E108E3E2AD539A5008293E5 /* SpeechRecognizer.swift */,
+				4E26267F2AC7EEBC002A3149 /* ChatScenario.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		CEB35FED2AB2C5AA007A69B1 = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +124,8 @@
 		CEB35FF82AB2C5AA007A69B1 /* Talkaway_AI */ = {
 			isa = PBXGroup;
 			children = (
+				4E108E402AD53D5F008293E5 /* Models */,
+				4E108E3D2AD5379F008293E5 /* Talkaway-AI-Info.plist */,
 				CEB35FF92AB2C5AA007A69B1 /* Talkaway_AIApp.swift */,
 				CEB35FFB2AB2C5AA007A69B1 /* ContentView.swift */,
 				CEB360252AB2C64F007A69B1 /* LogInView.swift */,
@@ -117,9 +133,9 @@
 				4E289E012AB6DD6C00D338B2 /* HomeView.swift */,
 				4E289E052AB73DFC00D338B2 /* TopicSelectorView.swift */,
 				4E289E032AB6F02600D338B2 /* ImgaePicker.swift */,
-				4E7BDD222AC70F170014376E /* ChatView.swift */,
-				4E26267F2AC7EEBC002A3149 /* Models.swift */,
+				4E7BDD222AC70F170014376E /* ChooseChatView.swift */,
 				4E2626812AC7EF12002A3149 /* ChatScenarioViewModel.swift */,
+				4E2626852ACAFE4D002A3149 /* CheatingView.swift */,
 				CEB35FFD2AB2C5AC007A69B1 /* Assets.xcassets */,
 				CEB35FFF2AB2C5AC007A69B1 /* Preview Content */,
 			);
@@ -285,12 +301,14 @@
 				4E289E062AB73DFC00D338B2 /* TopicSelectorView.swift in Sources */,
 				4E289E042AB6F02600D338B2 /* ImgaePicker.swift in Sources */,
 				CEB360242AB2C60A007A69B1 /* SignUpView.swift in Sources */,
-				4E7BDD232AC70F170014376E /* ChatView.swift in Sources */,
+				4E7BDD232AC70F170014376E /* ChooseChatView.swift in Sources */,
+				4E108E3F2AD539A5008293E5 /* SpeechRecognizer.swift in Sources */,
 				CEB360262AB2C64F007A69B1 /* LogInView.swift in Sources */,
-				4E2626802AC7EEBC002A3149 /* Models.swift in Sources */,
+				4E2626802AC7EEBC002A3149 /* ChatScenario.swift in Sources */,
 				4E289E022AB6DD6C00D338B2 /* HomeView.swift in Sources */,
 				4E2626822AC7EF12002A3149 /* ChatScenarioViewModel.swift in Sources */,
 				CEB35FFA2AB2C5AA007A69B1 /* Talkaway_AIApp.swift in Sources */,
+				4E2626862ACAFE4D002A3149 /* CheatingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,6 +470,11 @@
 				DEVELOPMENT_TEAM = KV852X9FTN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Talkaway-AI-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "需要使用麥克風進行對話錄音";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "需要將您的語音轉換成文字";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -481,6 +504,11 @@
 				DEVELOPMENT_TEAM = KV852X9FTN;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Talkaway-AI-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "";
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "需要使用麥克風進行對話錄音";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "需要將您的語音轉換成文字";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
