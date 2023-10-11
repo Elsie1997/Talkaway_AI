@@ -26,7 +26,7 @@ struct ContentView: View {
             VStack{
                 Text("隨時隨地,在您身邊。")
                 Text("Beside you, anytime, anywhere.")
-            }.font(.system(size: 21)).foregroundStyle(.white)
+            }.font(.system(size: 23)).foregroundStyle(.white)
             Spacer().frame(height: 100)
             
             //Button
