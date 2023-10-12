@@ -50,12 +50,12 @@ struct ChooseChatView: View {
                 .frame(width: 200)
                 .padding(.leading, 10)
             }
-           
+            
             // 顯示情境內容
             Text(randomContent ?? "--")
                 .frame(width: 200)
                 .padding(.top, 50)
-                .foregroundColor(Color.gray)
+                .foregroundColor(Color(hex: 0x333333))
             
             // 開始談話按鈕
             NavigationLink(destination: CheatingView()) {
@@ -69,11 +69,13 @@ struct ChooseChatView: View {
             }
             .padding(.top, 50)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(hex:0xE4C8DE))
         .onAppear {
             if randomContent == nil && !selectedChatScenario.content.isEmpty {
                 randomContent = selectedChatScenario.content.randomElement()
             }
-        }
+        }        
     }
 }
 

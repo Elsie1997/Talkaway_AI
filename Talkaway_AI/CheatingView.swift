@@ -16,18 +16,16 @@ struct CheatingView: View {
     
     @State private var progress: Double = 0.0
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
-
     
     var body: some View {
-        VStack(spacing: 20) {
-            ProgressBarView(progress: progress)
-                .padding(.horizontal)
+        VStack(spacing: 0) {
+            ProgressBarView(progress: $progress)
                 .onReceive(timer) { _ in
                     if progress < 1.0 {
-                        progress += 1.0 / (3.0 * 60.0) // 三分鐘
+                        progress += 1.0 / (1.0 * 10.0) // 三分鐘
                     }
                 }
-            
+                .padding(.bottom, 280)
             
             // 顯示語音文字
             ScrollView {
@@ -53,7 +51,9 @@ struct CheatingView: View {
                     .clipShape(Circle())
             }
         }
-        .padding()
+        .alignmentGuide(.top, computeValue: { d in d[.top] })
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color(hex:0xE4C8DE))
     }
     
     func toggleRecording() {

@@ -9,31 +9,50 @@ import SwiftUI
 import Foundation
 
 struct ProgressBarView: View {
-    var progress: Double // 0.0 -> 1.0
-    
+    @Binding var progress: Double
+    @State private var isPressed: Bool = false
+
     var body: some View {
-        VStack(spacing: 5) {
-            Text("獲得時數")
-                .foregroundColor(Color.black)
-                .bold(true)
-            
-            ZStack(alignment: .leading) {
-                Rectangle()
-                    .frame(width: UIScreen.main.bounds.width * 0.65, height: 10) // 修改這裡的寬度
-                    .opacity(0.3)
-                    .foregroundColor(Color.blue)
-                    .cornerRadius(8)
+        ZStack(alignment: .leading) {
+            // Background bar
+            Rectangle()
+                .frame(width: UIScreen.main.bounds.width * 0.65, height: 30)
+                .foregroundColor(Color.gray)
+                .cornerRadius(10)
+                .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 3) // Shadow for 3D effect
+
+            // Progress bar
+            Rectangle()
+                .frame(width: max(CGFloat(self.progress) * (UIScreen.main.bounds.width * 0.65), 0), height: 30)
+                .foregroundColor(Color.orange)
+                .cornerRadius(10)
+                .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 3) // Shadow for 3D effect
+
+            // Text "獲得時數"
+            VStack {
+                Spacer()
+                HStack {
+                    Spacer()
+                    Text("獲得時數")
+                        .font(.system(size: 14))
+                        .bold(true)
+                        .foregroundColor(.black)
+                    Spacer()
+                }
+                Spacer()
+            }
                 
-                Rectangle()
-                    .frame(width: CGFloat(self.progress) * (UIScreen.main.bounds.width * 0.65), height: 10) // 修改這裡的寬度
-                    .foregroundColor(Color.blue)
-                    .animation(.linear(duration: 0.2), value: progress)
-                    .cornerRadius(8)
-                
-                Circle()
-                    .frame(width: 15, height: 15)
-                    .foregroundColor(Color.blue)
-                    .offset(x: CGFloat(self.progress) * (UIScreen.main.bounds.width * 0.65) - 7.5)
+        }
+        .frame(width: UIScreen.main.bounds.width * 0.65)
+        .padding(.horizontal)
+        .scaleEffect(isPressed ? 0.97 : 1.0) // Pressed effect
+        .onTapGesture {
+            if progress >= 1.0 {
+                print("ProgressBar tapped!")
+                isPressed.toggle() // Toggles pressed effect on and off
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                    isPressed.toggle()
+                }
             }
         }
     }
