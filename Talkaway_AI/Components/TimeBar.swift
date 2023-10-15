@@ -17,34 +17,28 @@ struct ProgressBarView: View {
             // Background bar
             Rectangle()
                 .frame(width: UIScreen.main.bounds.width * 0.65, height: 30)
-                .foregroundColor(Color.gray)
+                .foregroundColor(Color(hex: 0xADD8E6))
                 .cornerRadius(10)
                 .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 3) // Shadow for 3D effect
 
             // Progress bar
             Rectangle()
                 .frame(width: max(CGFloat(self.progress) * (UIScreen.main.bounds.width * 0.65), 0), height: 30)
-                .foregroundColor(Color.orange)
+                .foregroundColor(Color.blue)
                 .cornerRadius(10)
                 .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 3) // Shadow for 3D effect
 
             // Text "獲得時數"
-            VStack {
+            HStack {
                 Spacer()
-                HStack {
-                    Spacer()
-                    Text("獲得時數")
-                        .font(.system(size: 14))
-                        .bold(true)
-                        .foregroundColor(.black)
-                    Spacer()
-                }
+                Text("獲得時數")
+                    .font(.system(size: 14))
+                    .bold(true)
+                    .foregroundColor(.black)
                 Spacer()
-            }
-                
+            }                
         }
         .frame(width: UIScreen.main.bounds.width * 0.65)
-        .padding(.horizontal)
         .scaleEffect(isPressed ? 0.97 : 1.0) // Pressed effect
         .onTapGesture {
             if progress >= 1.0 {

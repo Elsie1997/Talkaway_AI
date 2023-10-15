@@ -101,7 +101,9 @@ struct HomeView: View {
                     .cornerRadius(15)
                     .shadow(radius: 10)
                 }
-            }.background(Color(hex:0xE4C8DE))
+            }
+            .background(Color(hex:0xE4C8DE))
+            .navigationViewStyle(.stack)
         }
     }
 }

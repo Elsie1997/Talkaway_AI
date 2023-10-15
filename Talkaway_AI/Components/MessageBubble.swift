@@ -11,14 +11,10 @@ import Foundation
 
 struct MessageView: View {
     let message: Message
-
     var body: some View {
-        
         Text(message.text)
-            .padding(10)  // 根據你的需要調整這個值
-            .background(ChatBubbleShape(direction: .right).fill(Color.blue))
-            .foregroundColor(.white)
-            .padding([.leading, .trailing], 10)  // 在左右兩側添加一些邊距
+            .padding()
+            .navigationBarTitle("詳細文字", displayMode: .inline)
     }
 }
 

@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Message: Identifiable {
+struct Message: Identifiable, Equatable {
     let id = UUID()
     let text: String
+    let isFromUser: Bool
 }

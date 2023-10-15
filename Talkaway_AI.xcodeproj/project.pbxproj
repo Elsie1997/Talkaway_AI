@@ -14,6 +14,7 @@
 		4E289E022AB6DD6C00D338B2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E289E012AB6DD6C00D338B2 /* HomeView.swift */; };
 		4E289E042AB6F02600D338B2 /* ImgaePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E289E032AB6F02600D338B2 /* ImgaePicker.swift */; };
 		4E289E062AB73DFC00D338B2 /* TopicSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E289E052AB73DFC00D338B2 /* TopicSelectorView.swift */; };
+		4E65A1A92AD83E2500C3D474 /* Color+Hex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E65A1A82AD83E2500C3D474 /* Color+Hex.swift */; };
 		4E7BDD232AC70F170014376E /* ChooseChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BDD222AC70F170014376E /* ChooseChatView.swift */; };
 		4E81EE6D2AD54858008A17F8 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E81EE6C2AD54858008A17F8 /* Message.swift */; };
 		4E81EE702AD54B15008A17F8 /* MessageBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E81EE6F2AD54B15008A17F8 /* MessageBubble.swift */; };
@@ -55,6 +56,7 @@
 		4E289E012AB6DD6C00D338B2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4E289E032AB6F02600D338B2 /* ImgaePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgaePicker.swift; sourceTree = "<group>"; };
 		4E289E052AB73DFC00D338B2 /* TopicSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopicSelectorView.swift; sourceTree = "<group>"; };
+		4E65A1A82AD83E2500C3D474 /* Color+Hex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Hex.swift"; sourceTree = "<group>"; };
 		4E7BDD222AC70F170014376E /* ChooseChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseChatView.swift; sourceTree = "<group>"; };
 		4E81EE6C2AD54858008A17F8 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		4E81EE6F2AD54B15008A17F8 /* MessageBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubble.swift; sourceTree = "<group>"; };
@@ -108,6 +110,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		4E65A1A72AD83DFF00C3D474 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4E65A1A82AD83E2500C3D474 /* Color+Hex.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		4E81EE6E2AD54A91008A17F8 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +150,7 @@
 		CEB35FF82AB2C5AA007A69B1 /* Talkaway_AI */ = {
 			isa = PBXGroup;
 			children = (
+				4E65A1A72AD83DFF00C3D474 /* Extensions */,
 				4E81EE6E2AD54A91008A17F8 /* Components */,
 				4E108E402AD53D5F008293E5 /* Models */,
 				4E108E3D2AD5379F008293E5 /* Talkaway-AI-Info.plist */,
@@ -327,6 +338,7 @@
 				4E289E022AB6DD6C00D338B2 /* HomeView.swift in Sources */,
 				4E81EE6D2AD54858008A17F8 /* Message.swift in Sources */,
 				4E2626822AC7EF12002A3149 /* ChatScenarioViewModel.swift in Sources */,
+				4E65A1A92AD83E2500C3D474 /* Color+Hex.swift in Sources */,
 				CEB35FFA2AB2C5AA007A69B1 /* Talkaway_AIApp.swift in Sources */,
 				4E2626862ACAFE4D002A3149 /* CheatingView.swift in Sources */,
 			);
@@ -415,7 +427,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -469,7 +481,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
