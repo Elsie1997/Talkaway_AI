@@ -9,16 +9,6 @@ import SwiftUI
 import Foundation
 
 
-struct MessageView: View {
-    let message: Message    
-    var body: some View {
-        Text(message.text)
-            .padding()
-            .navigationBarTitle("詳細文字", displayMode: .inline)
-    }
-}
-
-
 struct ChatBubbleShape: Shape {
     enum Direction {
         case left
