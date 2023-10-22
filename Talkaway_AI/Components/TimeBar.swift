@@ -1,16 +1,9 @@
-//
-//  TimeBar.swift
-//  Talkaway_AI
-//
-//  Created by 陳冠霖 on 2023/10/10.
-//
-
 import SwiftUI
 import Foundation
 
 struct ProgressBarView: View {
     @Binding var progress: Double
-    @State private var isPressed: Bool = false
+    @State private var scaleEffect: CGFloat = 1.0
 
     var body: some View {
         ZStack(alignment: .leading) {
@@ -24,7 +17,11 @@ struct ProgressBarView: View {
             // Progress bar
             Rectangle()
                 .frame(width: max(CGFloat(self.progress) * (UIScreen.main.bounds.width * 0.65), 0), height: 30)
-                .foregroundColor(Color.blue)
+                .foregroundColor(progress >= 1.0 ? Color.yellow : Color.blue)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(progress >= 1.0 ? Color.white : Color.clear, lineWidth: 8) // Increased border width
+                )
                 .cornerRadius(10)
                 .shadow(color: Color.black.opacity(0.2), radius: 3, x: 0, y: 3) // Shadow for 3D effect
 
@@ -36,16 +33,20 @@ struct ProgressBarView: View {
                     .bold(true)
                     .foregroundColor(.black)
                 Spacer()
-            }                
+            }
         }
         .frame(width: UIScreen.main.bounds.width * 0.65)
-        .scaleEffect(isPressed ? 0.97 : 1.0) // Pressed effect
+        .scaleEffect(scaleEffect)
         .onTapGesture {
             if progress >= 1.0 {
-                print("ProgressBar tapped!")
-                isPressed.toggle() // Toggles pressed effect on and off
+                print("Progress bar tapped!")
+                withAnimation(.easeInOut(duration: 0.1)) {
+                    scaleEffect = 0.9
+                }
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-                    isPressed.toggle()
+                    withAnimation(.spring(response: 0.3, dampingFraction: 0.6, blendDuration: 0.5)) {
+                        scaleEffect = 1.0
+                    }
                 }
             }
         }
