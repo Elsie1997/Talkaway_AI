@@ -11,4 +11,6 @@ struct Message: Identifiable, Equatable {
     let id = UUID()
     let text: String
     let isFromUser: Bool
+    let audioURL: URL?
+    let hasAudio: Bool
 }

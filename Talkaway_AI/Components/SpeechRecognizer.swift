@@ -5,10 +5,10 @@
 //  Created by 陳冠霖 on 2023/10/10.
 //
 
-import Foundation
+import SwiftUI
 import AVFoundation
 import Speech
-import SwiftUI
+import Foundation
 
 
 /// A helper for transcribing speech to text using SFSpeechRecognizer and AVAudioEngine.
