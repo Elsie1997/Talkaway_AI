@@ -13,15 +13,17 @@ struct PopupMessageView: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text(message.text)
-                .padding()
+            ScrollView {
+                Text(message.text)
+                    .padding()
+            }
             
             Button("Back") {
                 isShown = false
             }
             .padding()
         }
-        .frame(width: 250, height: 150) // You can adjust this size
+        .frame(width: 250, height: 150)
         .background(Color.white)
         .cornerRadius(20)
         .shadow(radius: 20)

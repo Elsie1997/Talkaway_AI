@@ -70,7 +70,7 @@ class AudioManager: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudio
         isPlaying = true
     }
 
-    private func getDocumentsDirectory() -> URL {
+    func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
@@ -86,4 +86,6 @@ class AudioManager: NSObject, ObservableObject, AVAudioRecorderDelegate, AVAudio
         isPlaying = false
         NotificationCenter.default.post(name: Notification.Name("audioDidFinishPlaying"), object: nil)
     }
+    
+    
 }

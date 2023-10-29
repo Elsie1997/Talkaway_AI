@@ -23,6 +23,10 @@ struct CheatingView: View {
     @State private var progress: Double = 0.0
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
+    // Google TTS
+    let ttsManager = GoogleTTSManager()
+    
+    
     var body: some View {
         ZStack{
             VStack {
@@ -57,12 +61,12 @@ struct CheatingView: View {
                 }
                 
                 Button(action: toggleRecording) {
-                    Image(systemName: isRecording ? "mic.fill" : "mic.slash.fill")
+                    Image(systemName: isRecording ? "checkmark.circle" : "mic.fill")
                         .resizable()
                         .scaledToFit()
                         .frame(width: 45, height: 45)
                         .padding()
-                        .background(Color.red)
+                        .background(Color.blue)
                         .foregroundColor(.white)
                         .clipShape(Circle())
                 }
@@ -109,7 +113,7 @@ struct CheatingView: View {
                         selectedMessage = message
                         showMessageDetail = true
                     }) {
-                        Image(systemName: "a.book.closed.fill.zh")
+                        Image(systemName: "a.book.closed.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 35, height: 35)
@@ -143,13 +147,10 @@ struct CheatingView: View {
                     .frame(width: 90, height: 60) // Adjust the width to accommodate both icons
                 
                 HStack(spacing: 10) {
-                    // Playback Button
-                    Button(action: {
-                        if message.hasAudio {
+                    if message.hasAudio {
+                        Button(action: {
                             handleAudioPlayback(message: message)
-                        }
-                    }) {
-                        if message.hasAudio {
+                        }) {
                             Image(systemName: (audioManager.isPlaying && currentlyPlayingMessageID == message.id) ? "stop.circle.fill" : "play.fill")
                                 .resizable()
                                 .scaledToFit()
@@ -157,24 +158,28 @@ struct CheatingView: View {
                                 .foregroundColor(.white)
                         }
                     }
-                    
-                    // Book Icon - to show message in a model
+
+                    // Always display the book button
                     Button(action: {
                         selectedMessage = message
                         showMessageDetail = true
                     }) {
-                        Image(systemName: "a.book.closed.fill.zh")
+                        Image(systemName: "a.book.closed.fill")
                             .resizable()
                             .scaledToFit()
                             .frame(width: 35, height: 35)
                             .foregroundColor(.white)
                     }
                 }
+                .background(Color.gray)
+                .cornerRadius(10)
+
             }
             Spacer()
         }
         .padding(.leading, 8)  // Adjust this padding for the tail position
     }
+
 
     func toggleRecording() {
         isRecording.toggle()
@@ -192,28 +197,43 @@ struct CheatingView: View {
                 speechRecognizer.stopTranscribing()
                 
                 addMessage(from: speechRecognizer.transcript, isFromUser: true)
-                addMessage(from: "Fake Response now....", isFromUser: false)
+                addMessage(from: "Fake Response now!", isFromUser: false)
             }
         }
     }
         
     func addMessage(from transcript: String, isFromUser: Bool) {
-        var audioURL: URL? = nil
         if !isFromUser {  // If the message is from API
-            audioURL = convertTextToAudio(text: transcript)
+            convertTextToAudio(text: transcript) { audioURL in
+                let hasAudioContent = (audioURL != nil)
+                let newMessage = Message(text: transcript, isFromUser: isFromUser, audioURL: audioURL, hasAudio: hasAudioContent)
+                messages.append(newMessage)
+            }
         } else {
-            audioURL = audioManager.audioURL
+            let newMessage = Message(text: transcript, isFromUser: isFromUser, audioURL: audioManager.audioURL, hasAudio: true)
+            messages.append(newMessage)
         }
-        let hasAudioContent = (audioURL != nil)
-        let newMessage = Message(text: transcript, isFromUser: isFromUser, audioURL: audioURL, hasAudio: hasAudioContent)
-        messages.append(newMessage)
     }
     
-    func convertTextToAudio(text: String) -> URL? {
-        // Call the TTS API with `text`
-        // Save the audio it gives you locally
-        // Return the local URL of the saved audio
-        return nil
+    func convertTextToAudio(text: String, completion: @escaping (URL?) -> Void) {
+        ttsManager.fetchGoogleTTS(text: text) { audioData in
+            guard let data = audioData else {
+                completion(nil)
+                return
+            }
+            
+            // Decide where to save the audio
+            let localURL = audioManager.getDocumentsDirectory().appendingPathComponent("\(UUID().uuidString).mp3")
+            
+            // Save the audio locally
+            do {
+                try data.write(to: localURL)
+                completion(localURL)
+            } catch {
+                print("Error saving audio data: \(error)")
+                completion(nil)
+            }
+        }
     }
 }
        
