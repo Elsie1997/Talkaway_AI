@@ -58,7 +58,7 @@ struct ChooseChatView: View {
                 .foregroundColor(Color(hex: 0x333333))
             
             // 開始談話按鈕
-            NavigationLink(destination: CheatingView()) {
+            NavigationLink(destination: CheatingView(content: randomContent)) {
                 Text("開始談話")
                     .font(.headline)
                     .frame(width: 200, height: 14)

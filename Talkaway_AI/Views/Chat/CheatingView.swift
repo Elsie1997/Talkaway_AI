@@ -18,6 +18,9 @@ struct CheatingView: View {
     @State private var speechRecognizer = SpeechRecognizer() 
     @State private var currentlyPlayingMessageID: UUID? = nil
     @State private var selectedMessage: Message? = nil
+    @State private var isAwaitingUserResponse = false
+    @State private var isAPIProcessing = false
+    @State private var pulseAmount: CGFloat = 1.0
     
     // 進度條
     @State private var progress: Double = 0.0
@@ -26,6 +29,7 @@ struct CheatingView: View {
     // Google TTS
     let ttsManager = GoogleTTSManager()
     
+    var content: String?
     
     var body: some View {
         ZStack{
@@ -61,15 +65,35 @@ struct CheatingView: View {
                 }
                 
                 Button(action: toggleRecording) {
-                    Image(systemName: isRecording ? "checkmark.circle" : "mic.fill")
+                    Image(systemName: isRecording ? "person.wave.2.fill" : "mic.fill")
                         .resizable()
                         .scaledToFit()
-                        .frame(width: 45, height: 45)
+                        .frame(width: 35, height: 35)
                         .padding()
-                        .background(Color.blue)
-                        .foregroundColor(.white)
+                        .background(isAPIProcessing ? Color.gray: isRecording ? Color.red : Color.blue)
+                        .foregroundColor(Color.white)
                         .clipShape(Circle())
+                        .overlay(
+                            Circle()
+                                .stroke(Color.white, lineWidth: 3)
+                                .scaleEffect(pulseAmount)
+                                .opacity(isRecording ? 0.5 : 0)
+                                .animation(Animation.bouncy(duration: 0.5).repeatForever(autoreverses: true), value: isRecording)
+                        )
                 }
+                .disabled(isAPIProcessing)
+                .onChange(of: isRecording) { newValue in
+                    if newValue {
+                        withAnimation {
+                            pulseAmount = 1.2
+                        }
+                    } else {
+                        withAnimation {
+                            pulseAmount = 1.0
+                        }
+                    }
+                }
+
             }
             .modifier(BlurredBackground(isShown: showMessageDetail))
             
@@ -80,8 +104,25 @@ struct CheatingView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(hex:0xE4C8DE))
+        .onAppear {
+            apiCall(content: content ?? "")
+        }
     }
         
+    func apiCall(content: String) {
+        isAPIProcessing = true
+        
+        // TODO use api
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) {
+            DispatchQueue.main.async {
+                let response = "Fake response to: \(content)"
+                addMessage(from: response, isFromUser: false)
+                
+                isAPIProcessing = false
+            }
+        }
+    }
+
     
     @ViewBuilder
     func userMessageBubble(message: Message) -> some View {
@@ -180,27 +221,33 @@ struct CheatingView: View {
         .padding(.leading, 8)  // Adjust this padding for the tail position
     }
 
-
     func toggleRecording() {
         isRecording.toggle()
+        print("isRecording: \(isRecording)")
         if isRecording {
             audioManager.startRecording()
-            
+
             Task {
                 speechRecognizer.startTranscribing()
             }
         } else {
             audioManager.stopRecording()
-            
+
             Task {
                 _ = try? await Task.sleep(nanoseconds: UInt64(0.5 * Double(NSEC_PER_SEC)))  // 延遲 0.5 秒
                 speechRecognizer.stopTranscribing()
-                
+
+                // Check if the transcript is empty or contains only whitespace
+                if speechRecognizer.transcript.trimmingCharacters(in: .whitespaces).isEmpty {
+                    return
+                }
+
                 addMessage(from: speechRecognizer.transcript, isFromUser: true)
-                addMessage(from: "Fake Response now!", isFromUser: false)
+                apiCall(content: speechRecognizer.transcript)  // 呼叫apiCall函數並傳送錄音的轉寫文字內容
             }
         }
     }
+
         
     func addMessage(from transcript: String, isFromUser: Bool) {
         if !isFromUser {  // If the message is from API
@@ -236,6 +283,7 @@ struct CheatingView: View {
         }
     }
 }
+
        
 struct BlurredBackground: ViewModifier {
     var isShown: Bool

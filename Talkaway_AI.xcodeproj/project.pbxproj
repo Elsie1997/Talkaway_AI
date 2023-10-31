@@ -118,6 +118,67 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		4E4EF2F22AF141920054AEAC /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4E4EF2F82AF142370054AEAC /* Home */,
+				4E4EF2F42AF141E80054AEAC /* Chat */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4E4EF2F32AF141C80054AEAC /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4E4EF2F72AF142210054AEAC /* Chat */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4E4EF2F42AF141E80054AEAC /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4E2626852ACAFE4D002A3149 /* CheatingView.swift */,
+				4EC3C01E2AE5249900B585DE /* PopupMessageView.swift */,
+				4E289E052AB73DFC00D338B2 /* TopicSelectorView.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		4E4EF2F52AF142080054AEAC /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4E4EF2F62AF142110054AEAC /* Chat */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		4E4EF2F62AF142110054AEAC /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4E26267F2AC7EEBC002A3149 /* ChatScenario.swift */,
+				4E81EE6C2AD54858008A17F8 /* Message.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		4E4EF2F72AF142210054AEAC /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				4E2626812AC7EF12002A3149 /* ChatScenarioViewModel.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		4E4EF2F82AF142370054AEAC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				4E289E012AB6DD6C00D338B2 /* HomeView.swift */,
+				4E7BDD222AC70F170014376E /* ChooseChatView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		4E65A1A72AD83DFF00C3D474 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,76 +198,6 @@
 				4E4EF2E92AEEC3F90054AEAC /* GoogleTTSManager.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		4EC3C02D2AE5755900B585DE /* Chat */ = {
-			isa = PBXGroup;
-			children = (
-				4EC3C0322AE575A400B585DE /* ViewModels */,
-				4EC3C0312AE5759700B585DE /* Views */,
-				4EC3C02F2AE5756900B585DE /* Models */,
-			);
-			path = Chat;
-			sourceTree = "<group>";
-		};
-		4EC3C02E2AE5756200B585DE /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				4EC3C0342AE575D600B585DE /* ViewModels */,
-				4EC3C0332AE575CF00B585DE /* Views */,
-				4EC3C0302AE5757200B585DE /* Models */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		4EC3C02F2AE5756900B585DE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				4E26267F2AC7EEBC002A3149 /* ChatScenario.swift */,
-				4E81EE6C2AD54858008A17F8 /* Message.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		4EC3C0302AE5757200B585DE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		4EC3C0312AE5759700B585DE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4E2626852ACAFE4D002A3149 /* CheatingView.swift */,
-				4EC3C01E2AE5249900B585DE /* PopupMessageView.swift */,
-				4E289E052AB73DFC00D338B2 /* TopicSelectorView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		4EC3C0322AE575A400B585DE /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				4E2626812AC7EF12002A3149 /* ChatScenarioViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		4EC3C0332AE575CF00B585DE /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				4E289E012AB6DD6C00D338B2 /* HomeView.swift */,
-				4E7BDD222AC70F170014376E /* ChooseChatView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		4EC3C0342AE575D600B585DE /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		CEB35FED2AB2C5AA007A69B1 = {
@@ -232,13 +223,14 @@
 		CEB35FF82AB2C5AA007A69B1 /* Talkaway_AI */ = {
 			isa = PBXGroup;
 			children = (
-				4E4EF2EE2AEECF280054AEAC /* LocalSetting.swift */,
+				4E4EF2F32AF141C80054AEAC /* ViewModels */,
+				4E4EF2F52AF142080054AEAC /* Models */,
+				4E4EF2F22AF141920054AEAC /* Views */,
 				4E4EF2EB2AEEC80B0054AEAC /* Utils */,
-				4EC3C02E2AE5756200B585DE /* Home */,
-				4EC3C02D2AE5755900B585DE /* Chat */,
 				4E65A1A72AD83DFF00C3D474 /* Extensions */,
 				4E81EE6E2AD54A91008A17F8 /* Components */,
 				4E108E3D2AD5379F008293E5 /* Talkaway-AI-Info.plist */,
+				4E4EF2EE2AEECF280054AEAC /* LocalSetting.swift */,
 				CEB35FF92AB2C5AA007A69B1 /* Talkaway_AIApp.swift */,
 				CEB35FFB2AB2C5AA007A69B1 /* ContentView.swift */,
 				CEB360252AB2C64F007A69B1 /* LogInView.swift */,
