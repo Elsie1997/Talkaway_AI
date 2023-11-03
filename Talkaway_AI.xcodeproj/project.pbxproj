@@ -18,6 +18,7 @@
 		CEB360242AB2C60A007A69B1 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB360232AB2C60A007A69B1 /* SignUpView.swift */; };
 		CEB360262AB2C64F007A69B1 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB360252AB2C64F007A69B1 /* LogInView.swift */; };
 		CEB360282AC2FE2B007A69B1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB360272AC2FE2B007A69B1 /* LoadingView.swift */; };
+		ED6BE66F2AF48415006B24FB /* TimeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6BE66E2AF48415006B24FB /* TimeBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		CEB360232AB2C60A007A69B1 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		CEB360252AB2C64F007A69B1 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		CEB360272AC2FE2B007A69B1 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		ED6BE66E2AF48415006B24FB /* TimeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 				CEB360232AB2C60A007A69B1 /* SignUpView.swift */,
 				CEB360272AC2FE2B007A69B1 /* LoadingView.swift */,
 				CE57D2732AEF3FB1001E57B9 /* FeedbackView.swift */,
+				ED6BE66E2AF48415006B24FB /* TimeBar.swift */,
 				CEB35FFD2AB2C5AC007A69B1 /* Assets.xcassets */,
 				CEB35FFF2AB2C5AC007A69B1 /* Preview Content */,
 			);
@@ -273,6 +276,7 @@
 				CEB360242AB2C60A007A69B1 /* SignUpView.swift in Sources */,
 				CEB360262AB2C64F007A69B1 /* LogInView.swift in Sources */,
 				CEB360282AC2FE2B007A69B1 /* LoadingView.swift in Sources */,
+				ED6BE66F2AF48415006B24FB /* TimeBar.swift in Sources */,
 				CEB35FFA2AB2C5AA007A69B1 /* Talkaway_AIApp.swift in Sources */,
 				CE57D2742AEF3FB1001E57B9 /* FeedbackView.swift in Sources */,
 			);

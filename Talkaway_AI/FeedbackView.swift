@@ -9,7 +9,6 @@ import SwiftUI
 import Foundation
 
 struct FeedbackView: View {
-    //@Binding var progress: Double
     @State private var progress: Double = 0.0
     @State private var scaleEffect: CGFloat = 1.0
     
@@ -19,7 +18,7 @@ struct FeedbackView: View {
             
             ZStack{
                 VStack {
-                    FeedbackView(progress: $progress)
+                    ProgressBarView(progress: $progress)
                         .onReceive(timer) { _ in
                             if progress < 1.0 {
                                 progress += 1.0 / (1.0 * 10.0)
