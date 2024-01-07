@@ -13,6 +13,7 @@ struct FeedbackView: View {
     @State private var scaleEffect: CGFloat = 1.0
     
     var body: some View {
+<<<<<<< HEAD
         NavigationView{
             VStack{
                 ZStack(alignment: .leading) {
@@ -26,6 +27,18 @@ struct FeedbackView: View {
                                         progress += 1.0 / (1.0 * 10.0)
                                     }
                                 }
+=======
+        ZStack(alignment: .leading) {
+            let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+            
+            ZStack{
+                VStack {
+                    ProgressBarView(progress: $progress)
+                        .onReceive(timer) { _ in
+                            if progress < 1.0 {
+                                progress += 1.0 / (1.0 * 10.0)
+                            }
+>>>>>>> c7183e01339a16d758e092addff4bee850f2477e
                         }
                     }
                 }
