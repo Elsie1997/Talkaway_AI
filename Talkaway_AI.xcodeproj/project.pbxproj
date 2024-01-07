@@ -114,12 +114,8 @@
 				CEB360232AB2C60A007A69B1 /* SignUpView.swift */,
 				CEB360272AC2FE2B007A69B1 /* LoadingView.swift */,
 				CE57D2732AEF3FB1001E57B9 /* FeedbackView.swift */,
-<<<<<<< HEAD
 				CE6487A22B4A5E6600FC9477 /* MorefeedbackView.swift */,
 				CE64879E2AF4BE3500FC9477 /* TimeBarView.swift */,
-=======
-				ED6BE66E2AF48415006B24FB /* TimeBar.swift */,
->>>>>>> c7183e01339a16d758e092addff4bee850f2477e
 				CEB35FFD2AB2C5AC007A69B1 /* Assets.xcassets */,
 				CEB35FFF2AB2C5AC007A69B1 /* Preview Content */,
 			);
@@ -285,11 +281,7 @@
 				CEB360242AB2C60A007A69B1 /* SignUpView.swift in Sources */,
 				CEB360262AB2C64F007A69B1 /* LogInView.swift in Sources */,
 				CEB360282AC2FE2B007A69B1 /* LoadingView.swift in Sources */,
-<<<<<<< HEAD
 				CE6487A32B4A5E6600FC9477 /* MorefeedbackView.swift in Sources */,
-=======
-				ED6BE66F2AF48415006B24FB /* TimeBar.swift in Sources */,
->>>>>>> c7183e01339a16d758e092addff4bee850f2477e
 				CEB35FFA2AB2C5AA007A69B1 /* Talkaway_AIApp.swift in Sources */,
 				CE57D2742AEF3FB1001E57B9 /* FeedbackView.swift in Sources */,
 				CE64879F2AF4BE3500FC9477 /* TimeBarView.swift in Sources */,
