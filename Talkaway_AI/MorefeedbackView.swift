@@ -1,14 +1,14 @@
 //
-//  FeedbackView.swift
+//  MorefeedbackView.swift
 //  Talkaway_AI
 //
-//  Created by Elsie Hsu on 10/29/23.
+//  Created by Elsie Hsu on 1/6/24.
 //
 
 import SwiftUI
 import Foundation
 
-struct FeedbackView: View {
+struct MorefeedbackView: View {
     @State private var progress: Double = 0.0
     @State private var scaleEffect: CGFloat = 1.0
     
@@ -69,9 +69,9 @@ struct FeedbackView: View {
         }
     }
 }
-                        
-struct FeedbackView_Previews: PreviewProvider {
+
+struct MorefeedbackView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedbackView()
+        MorefeedbackView()
     }
 }
