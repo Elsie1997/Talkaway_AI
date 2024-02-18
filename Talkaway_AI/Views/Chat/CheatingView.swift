@@ -11,7 +11,7 @@ import AVFoundation
 
 struct CheatingView: View {
     @StateObject private var audioManager = AudioManager()
-    
+        
     @State private var isRecording = false
     @State private var showMessageDetail = false
     @State private var messages: [Message] = []
@@ -21,10 +21,12 @@ struct CheatingView: View {
     @State private var isAwaitingUserResponse = false
     @State private var isAPIProcessing = false
     @State private var pulseAmount: CGFloat = 1.0
+    @State private var hasViewAppeared = false
+    @State private var sessionId: String? = nil // 添加一個用於存儲 session_id 的狀態變量
     
     // 進度條
-    @State private var progress: Double = 0.0
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+//    @State private var progress: Double = 0.0
+//    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     // Google TTS
     let ttsManager = GoogleTTSManager()
@@ -34,12 +36,12 @@ struct CheatingView: View {
     var body: some View {
         ZStack{
             VStack {
-                ProgressBarView(progress: $progress)
-                    .onReceive(timer) { _ in
-                        if progress < 1.0 {
-                            progress += 1.0 / (1.0 * 10.0) // 三分鐘
-                        }
-                    }
+//                ProgressBarView(progress: $progress)
+//                    .onReceive(timer) { _ in
+//                        if progress < 1.0 {
+//                            progress += 1.0 / (1.0 * 10.0) // 三分鐘
+//                        }
+//                    }
                 
                 // 顯示語音文字
                 ScrollViewReader { proxy in
@@ -105,23 +107,71 @@ struct CheatingView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(hex:0xE4C8DE))
         .onAppear {
-            apiCall(content: content ?? "")
-        }
-    }
-        
-    func apiCall(content: String) {
-        isAPIProcessing = true
-        
-        // TODO use api
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2.0) {
-            DispatchQueue.main.async {
-                let response = "Fake response to: \(content)"
-                addMessage(from: response, isFromUser: false)
-                
-                isAPIProcessing = false
+            if !hasViewAppeared {
+                apiCall(content: content ?? "", isFirstCall: true)
+                hasViewAppeared = true
             }
         }
     }
+
+    func apiCall(content: String, isFirstCall: Bool = false) {
+        isAPIProcessing = true
+        
+        // 設置URL和請求參數
+        guard let url = URL(string: APIEndPointEnum.chat.url) else { return }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        // 根據是否為首次調用來設置 requestBody，並在後續調用中添加 session_id（如果存在）
+        var requestBody: [String: Any] = isFirstCall ? ["scenario": content] : ["input_text": content]
+        
+        if !isFirstCall, let sessionId = sessionId {
+            requestBody["session_id"] = sessionId // 非首次調用時，添加 session_id
+        }
+        
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: requestBody, options: []) else { return }
+        request.httpBody = httpBody
+        
+        // 發送請求
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                self.isAPIProcessing = false
+                if let error = error {
+                    print("Error: \(error)")
+                    return
+                }
+                
+                guard let data = data else {
+                    print("No data received")
+                    return
+                }
+                
+                // 解析Json
+                do {
+                    if let jsonResult = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+                       let code = jsonResult["code"] as? String,
+                       let message = jsonResult["message"] as? String {
+                           if code == "000" {
+                               if let data = jsonResult["data"] as? [String: Any], // 更新此處以匹配新的數據結構
+                                  let sessionId = data["session_id"] as? String,
+                                  let gptResponse = data["gpt_response"] as? String {
+                                      self.sessionId = sessionId // 儲存或更新 session_id
+                                      self.addMessage(from: gptResponse, isFromUser: false) // 使用 gpt_response 更新消息
+                               }
+                           } else {
+                               print("Failure: \(message)")
+                           }
+                    }
+                } catch {
+                    print("JSON parsing error: \(error)")
+                }
+            }
+        }
+        task.resume()
+    }
+
 
     
     @ViewBuilder

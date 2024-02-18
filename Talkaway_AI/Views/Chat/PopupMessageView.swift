@@ -12,20 +12,24 @@ struct PopupMessageView: View {
     @Binding var isShown: Bool
 
     var body: some View {
-        VStack(spacing: 20) {
-            ScrollView {
-                Text(message.text)
-                    .padding()
+        GeometryReader { geometry in
+            VStack(spacing: 20) {
+                ScrollView {
+                    Text(message.text)
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                }
+                
+                Button("Back") {
+                    isShown = false
+                }
+                .padding()
             }
-            
-            Button("Back") {
-                isShown = false
-            }
-            .padding()
+            .frame(width: min(geometry.size.width, 250), height: min(geometry.size.height, 400))
+            .background(Color.white)
+            .cornerRadius(20)
+            .shadow(radius: 20)
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .frame(width: 250, height: 150)
-        .background(Color.white)
-        .cornerRadius(20)
-        .shadow(radius: 20)
     }
 }
