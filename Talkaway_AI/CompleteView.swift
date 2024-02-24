@@ -1,14 +1,14 @@
 //
-//  FeedbackView.swift
+//  CompleteView.swift
 //  Talkaway_AI
 //
-//  Created by Elsie Hsu on 10/29/23.
+//  Created by Elsie Hsu on 1/7/24.
 //
 
 import SwiftUI
 import Foundation
 
-struct FeedbackView: View {
+struct CompleteView: View {
     @State private var progress: Double = 0.0
     @State private var scaleEffect: CGFloat = 1.0
     
@@ -58,7 +58,7 @@ struct FeedbackView: View {
                 }.position(x: 90, y: 20)
                 
                 NavigationLink(destination: CompleteView()) {
-                    Text("下一個").font(.system(size:20)).bold().foregroundStyle(.blue)
+                    Text("完成").font(.system(size:20)).bold().foregroundStyle(.blue)
                 }
                 
                 //HStack{
@@ -70,9 +70,9 @@ struct FeedbackView: View {
     }
 }
 
-struct FeedbackView_Previews: PreviewProvider {
+
+struct CompleteView_Previews: PreviewProvider {
     static var previews: some View {
-        FeedbackView()
+        CompleteView()
     }
 }
-

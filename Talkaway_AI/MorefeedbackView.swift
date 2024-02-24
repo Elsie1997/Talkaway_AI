@@ -2,7 +2,7 @@
 //  MorefeedbackView.swift
 //  Talkaway_AI
 //
-//  Created by Elsie Hsu on 1/6/24.
+//  Created by Elsie Hsu on 1/7/24.
 //
 
 import SwiftUI
@@ -57,7 +57,7 @@ struct MorefeedbackView: View {
                     Image(systemName: "speaker.wave.3.fill")
                 }.position(x: 90, y: 20)
                 
-                NavigationLink(destination: MorefeedbackView()) {
+                NavigationLink(destination: CompleteView()) {
                     Text("下一個").font(.system(size:20)).bold().foregroundStyle(.blue)
                 }
                 

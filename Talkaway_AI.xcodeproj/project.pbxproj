@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4275552B4B6DD400D7C685 /* CompleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4275542B4B6DD400D7C685 /* CompleteView.swift */; };
 		CE57D2742AEF3FB1001E57B9 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE57D2732AEF3FB1001E57B9 /* FeedbackView.swift */; };
 		CE64879F2AF4BE3500FC9477 /* TimeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE64879E2AF4BE3500FC9477 /* TimeBarView.swift */; };
 		CEB35FFA2AB2C5AA007A69B1 /* Talkaway_AIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB35FF92AB2C5AA007A69B1 /* Talkaway_AIApp.swift */; };
@@ -19,7 +20,6 @@
 		CEB360242AB2C60A007A69B1 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB360232AB2C60A007A69B1 /* SignUpView.swift */; };
 		CEB360262AB2C64F007A69B1 /* LogInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB360252AB2C64F007A69B1 /* LogInView.swift */; };
 		CEB360282AC2FE2B007A69B1 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB360272AC2FE2B007A69B1 /* LoadingView.swift */; };
-		ED6BE66F2AF48415006B24FB /* TimeBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6BE66E2AF48415006B24FB /* TimeBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,9 +40,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE4275542B4B6DD400D7C685 /* CompleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteView.swift; sourceTree = "<group>"; };
 		CE57D2732AEF3FB1001E57B9 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
 		CE64879E2AF4BE3500FC9477 /* TimeBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBarView.swift; sourceTree = "<group>"; };
-		CE6487A22B4A5E6600FC9477 /* MorefeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MorefeedbackView.swift; sourceTree = "<group>"; };
 		CEB35FF62AB2C5AA007A69B1 /* Talkaway_AI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Talkaway_AI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CEB35FF92AB2C5AA007A69B1 /* Talkaway_AIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talkaway_AIApp.swift; sourceTree = "<group>"; };
 		CEB35FFB2AB2C5AA007A69B1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,7 +56,6 @@
 		CEB360232AB2C60A007A69B1 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		CEB360252AB2C64F007A69B1 /* LogInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInView.swift; sourceTree = "<group>"; };
 		CEB360272AC2FE2B007A69B1 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		ED6BE66E2AF48415006B24FB /* TimeBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +112,7 @@
 				CEB360232AB2C60A007A69B1 /* SignUpView.swift */,
 				CEB360272AC2FE2B007A69B1 /* LoadingView.swift */,
 				CE57D2732AEF3FB1001E57B9 /* FeedbackView.swift */,
-				CE6487A22B4A5E6600FC9477 /* MorefeedbackView.swift */,
+				CE4275542B4B6DD400D7C685 /* CompleteView.swift */,
 				CE64879E2AF4BE3500FC9477 /* TimeBarView.swift */,
 				CEB35FFD2AB2C5AC007A69B1 /* Assets.xcassets */,
 				CEB35FFF2AB2C5AC007A69B1 /* Preview Content */,
@@ -278,9 +277,9 @@
 			files = (
 				CEB35FFC2AB2C5AA007A69B1 /* ContentView.swift in Sources */,
 				CEB360242AB2C60A007A69B1 /* SignUpView.swift in Sources */,
+				CE4275552B4B6DD400D7C685 /* CompleteView.swift in Sources */,
 				CEB360262AB2C64F007A69B1 /* LogInView.swift in Sources */,
 				CEB360282AC2FE2B007A69B1 /* LoadingView.swift in Sources */,
-				CE6487A32B4A5E6600FC9477 /* MorefeedbackView.swift in Sources */,
 				CEB35FFA2AB2C5AA007A69B1 /* Talkaway_AIApp.swift in Sources */,
 				CE57D2742AEF3FB1001E57B9 /* FeedbackView.swift in Sources */,
 				CE64879F2AF4BE3500FC9477 /* TimeBarView.swift in Sources */,
