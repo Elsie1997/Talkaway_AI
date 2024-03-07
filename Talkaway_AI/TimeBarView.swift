@@ -1,8 +1,14 @@
+//
+//  TimeBarView.swift
+//  Talkaway_AI
+//
+//  Created by Elsie Hsu on 11/2/23.
+//
+
 import SwiftUI
 import Foundation
 
-
-struct ProgressBar2View: View {
+struct ProgressBarView: View {
     @Binding var progress: Double
     @State private var scaleEffect: CGFloat = 1.0
 
