@@ -206,6 +206,33 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		CE06253D2BA7AA8500089C20 /* FirstLogin */ = {
+			isa = PBXGroup;
+			children = (
+				CEB360252AB2C64F007A69B1 /* LogInView.swift */,
+				CEB360232AB2C60A007A69B1 /* SignUpView.swift */,
+				CEB35FFB2AB2C5AA007A69B1 /* ContentView.swift */,
+			);
+			path = FirstLogin;
+			sourceTree = "<group>";
+		};
+		CE0625422BA7AD7600089C20 /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				CE57D2732AEF3FB1001E57B9 /* FeedbackView.swift */,
+				CE4275542B4B6DD400D7C685 /* CompleteView.swift */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		CE0625442BA7ADD600089C20 /* Logos */ = {
+			isa = PBXGroup;
+			children = (
+				CEB35FFD2AB2C5AC007A69B1 /* Assets.xcassets */,
+			);
+			path = Logos;
+			sourceTree = "<group>";
+		};
 		CEB35FED2AB2C5AA007A69B1 = {
 			isa = PBXGroup;
 			children = (
@@ -238,14 +265,10 @@
 				4E108E3D2AD5379F008293E5 /* Talkaway-AI-Info.plist */,
 				4E4EF2EE2AEECF280054AEAC /* LocalSetting.swift */,
 				CEB35FF92AB2C5AA007A69B1 /* Talkaway_AIApp.swift */,
-				CEB35FFB2AB2C5AA007A69B1 /* ContentView.swift */,
-				CEB360252AB2C64F007A69B1 /* LogInView.swift */,
-				CEB360232AB2C60A007A69B1 /* SignUpView.swift */,
-				CEB360272AC2FE2B007A69B1 /* LoadingView.swift */,
-				CE57D2732AEF3FB1001E57B9 /* FeedbackView.swift */,
-				CE4275542B4B6DD400D7C685 /* CompleteView.swift */,
+				CE0625422BA7AD7600089C20 /* Feedback */,
+				CE06253D2BA7AA8500089C20 /* FirstLogin */,
 				CE64879E2AF4BE3500FC9477 /* TimeBarView.swift */,
-				CEB35FFD2AB2C5AC007A69B1 /* Assets.xcassets */,
+				CE0625442BA7ADD600089C20 /* Logos */,
 				CEB35FFF2AB2C5AC007A69B1 /* Preview Content */,
 			);
 			path = Talkaway_AI;
@@ -340,7 +363,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					CEB35FF52AB2C5AA007A69B1 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -502,6 +525,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -562,6 +586,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

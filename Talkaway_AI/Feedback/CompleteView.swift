@@ -57,7 +57,7 @@ struct CompleteView: View {
                     Image(systemName: "speaker.wave.3.fill")
                 }.position(x: 90, y: 20)
                 
-                NavigationLink(destination: CompleteView()) {
+                NavigationLink(destination: HomeView()) {
                     Text("完成").font(.system(size:20)).bold().foregroundStyle(.blue)
                 }
                 
