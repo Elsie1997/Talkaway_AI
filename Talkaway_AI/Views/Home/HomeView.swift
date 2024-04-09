@@ -67,9 +67,22 @@ struct HomeView: View {
                     .padding(.bottom, 8)
                     
                     NavigationLink(destination: AdvicePage()) {
-                        Text("改善建議")
+                        Text("回饋建議")
                             .font(.headline)
                             .frame(width: 200, height: 15)
+                            .padding()
+                            .background(Color.gray)
+                            .foregroundColor(.white)
+                            .cornerRadius(15)
+                    }
+                    .padding(.bottom, 8)
+                    .disabled(true)
+                    
+                    // 修改路徑
+                    NavigationLink(destination:  ChooseChatView(selectedChatScenario: chatScenarioViewModel.currentScenario!)) {
+                        Text("腳本對話＆發音練習")
+                            .font(.headline)
+                            .frame(width: 200, height: 14)
                             .padding()
                             .background(Color.gray)
                             .foregroundColor(.white)
