@@ -79,16 +79,15 @@ struct HomeView: View {
                     .disabled(true)
                     
                     // 修改路徑
-                    NavigationLink(destination:  ChooseChatView(selectedChatScenario: chatScenarioViewModel.currentScenario!)) {
+                    NavigationLink(destination:  SettingView(selectedChatScenario: chatScenarioViewModel.currentScenario!)) {
                         Text("腳本對話＆發音練習")
                             .font(.headline)
                             .frame(width: 200, height: 14)
                             .padding()
-                            .background(Color.gray)
+                            .background(Color.blue)
                             .foregroundColor(.white)
                             .cornerRadius(15)
                     }
-                    .disabled(true)
                         
                     
                 }
