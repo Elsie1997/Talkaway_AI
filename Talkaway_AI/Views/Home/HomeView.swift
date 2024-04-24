@@ -5,10 +5,25 @@
 //  Created by kuanlin on 2023/9/17.
 //
 import SwiftUI
+import Observation
+
+class GlobalTalkState: ObservableObject {
+    @Published var isTalked: Bool
+    init() {
+        self.isTalked = false;
+    }
+    
+    func writeTalked() {
+        self.isTalked = true;
+    }
+}
+
+
 
 
 struct HomeView: View {
     @ObservedObject var chatScenarioViewModel = ChatScenarioViewModel()
+    @StateObject var talkState = GlobalTalkState()
     
     @State private var isTopicSelectorPresented: Bool = false
     
@@ -71,12 +86,14 @@ struct HomeView: View {
                             .font(.headline)
                             .frame(width: 200, height: 15)
                             .padding()
-                            .background(Color.gray)
+                            .background(talkState.isTalked ? Color.blue : Color.gray)
                             .foregroundColor(.white)
                             .cornerRadius(15)
                     }
                     .padding(.bottom, 8)
-                    .disabled(true)
+                    .disabled(!talkState.isTalked)
+                    
+                   
                     
                     // 修改路徑
                     NavigationLink(destination:  SettingView(selectedChatScenario: chatScenarioViewModel.currentScenario!)) {
@@ -121,6 +138,7 @@ struct HomeView: View {
 }
 
 struct AdvicePage: View {
+    @StateObject var globalString = GlobalTalkState()
     var body: some View {
         VStack {
             Text("改善建議功能")

@@ -10,6 +10,7 @@ import Speech
 import AVFoundation
 
 struct CheatingView: View {
+    @StateObject var talkState = GlobalTalkState()
     @StateObject private var audioManager = AudioManager()
         
     @State private var isRecording = false
@@ -42,6 +43,23 @@ struct CheatingView: View {
 //                            progress += 1.0 / (1.0 * 10.0) // 三分鐘
 //                        }
 //                    }
+                
+                // 回饋
+                
+                
+                Button("結束對話"){
+                    talkState.writeTalked()
+                    print(talkState.isTalked)
+                }
+                .font(.headline)
+                .frame(width: 200, height: 14)
+                .padding()
+                .background(Color.blue)
+                .foregroundColor(.white)
+                .cornerRadius(15)
+                NavigationLink(destination:  HomeView()) {
+                }
+                .padding(.bottom, 8)
                 
                 // 顯示語音文字
                 ScrollViewReader { proxy in
@@ -99,6 +117,7 @@ struct CheatingView: View {
             }
             .modifier(BlurredBackground(isShown: showMessageDetail))
             
+            
             // Pop-up window
             if showMessageDetail, let messageToShow = selectedMessage {
                 PopupMessageView(message: messageToShow, isShown: $showMessageDetail)
@@ -112,6 +131,8 @@ struct CheatingView: View {
                 hasViewAppeared = true
             }
         }
+        
+        
     }
 
     func apiCall(content: String, isFirstCall: Bool = false) {
