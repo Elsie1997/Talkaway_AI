@@ -63,7 +63,7 @@ struct SettingView: View {
                             .bold(true)
                             .font(.system(size: 18))
                         
-                        Picker(selection: $selectedAccent, label: Text("難度")) {
+                        Picker(selection: $selectedAccent, label: Text("口音")) {
                             ForEach(accent, id: \.self) { level in
                                 Text(level).tag(level)
                             }
@@ -81,7 +81,7 @@ struct SettingView: View {
                             .padding(.trailing, 10)
                         
                         Section{
-                            Picker(selection: $selectedSpeed, label: Text("難度")) {
+                            Picker(selection: $selectedSpeed, label: Text("語速")) {
                                 ForEach(speed, id: \.self) { level in
                                     Text("X\(level)").tag(level)
                                 }
@@ -89,7 +89,7 @@ struct SettingView: View {
                             .frame(width: 190)
                             .padding(.leading, 10)
                             .background(Color.white)
-                            .cornerRadius(20)
+                            .cornerRadius(10)
                         }
                         
                     }
