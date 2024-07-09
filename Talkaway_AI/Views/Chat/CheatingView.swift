@@ -22,7 +22,7 @@ struct CheatingView: View {
     @State private var isAPIProcessing = false
     @State private var pulseAmount: CGFloat = 1.0
     @State private var hasViewAppeared = false
-    @State private var sessionId: String? = nil // 添加一個用於存儲 session_id 的狀態變量
+    @State private var chatId: String? = nil // 添加一個用於存儲 session_id 的狀態變量
     
     // 進度條
 //    @State private var progress: Double = 0.0
@@ -124,18 +124,21 @@ struct CheatingView: View {
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        // 根據是否為首次調用來設置 requestBody，並在後續調用中添加 session_id（如果存在）
-        var requestBody: [String: Any] = isFirstCall ? ["scenario": content] : ["input_text": content]
+        // 根據是否為首次調用來設置 requestBody，並在後續調用中添加 chat_id（如果存在）
+        var requestBody: [String: Any] = isFirstCall ? ["scenario": content] : ["user_input": content]
         
-        if !isFirstCall, let sessionId = sessionId {
-            requestBody["session_id"] = sessionId // 非首次調用時，添加 session_id
+        if !isFirstCall, let chatId = chatId {
+            requestBody["chat_id"] = chatId // 非首次調用時，添加 session_id
         }
         
-        guard let httpBody = try? JSONSerialization.data(withJSONObject: requestBody, options: []) else { return }
+        guard let httpBody = try? JSONSerialization.data(withJSONObject: requestBody, options: []) else {
+            return
+        }
         request.httpBody = httpBody
         
         // 發送請求
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        let task = URLSession.shared.dataTask(with: request) {
+            data, response, error in
             DispatchQueue.main.async {
                 self.isAPIProcessing = false
                 if let error = error {
@@ -148,22 +151,28 @@ struct CheatingView: View {
                     return
                 }
                 
+                
                 // 解析Json
                 do {
-                    if let jsonResult = try JSONSerialization.jsonObject(with: data) as? [String: Any],
-                       let code = jsonResult["code"] as? String,
-                       let message = jsonResult["message"] as? String {
-                           if code == "000" {
-                               if let data = jsonResult["data"] as? [String: Any], // 更新此處以匹配新的數據結構
-                                  let sessionId = data["session_id"] as? String,
-                                  let gptResponse = data["gpt_response"] as? String {
-                                      self.sessionId = sessionId // 儲存或更新 session_id
-                                      self.addMessage(from: gptResponse, isFromUser: false) // 使用 gpt_response 更新消息
-                               }
-                           } else {
-                               print("Failure: \(message)")
-                           }
-                    }
+                    if let jsonResult = try JSONSerialization.jsonObject(with: data) as? [String: Any] {
+                            if let code = jsonResult["code"] as? String,
+                               let message = jsonResult["msg"] as? String {
+                                if code == "0" {
+                                    print(jsonResult["data"] as? [String: Any]) 
+                                    if let data = jsonResult["data"] as? [String: Any], // 更新此處以匹配新的數據結構
+                                       let chatId = data["chat_id"] as? String,
+                                       let content = data["content"] as? String {
+                                        self.chatId = chatId // 儲存或更新 chat_id
+                                        print(content)
+                                        self.addMessage(from: content, isFromUser: false) // 使用 content 更新消息
+                                    }
+                                } else {
+                                    print("Failure: \(message)")
+                                }
+                            } else {
+                                print("FailParse")
+                            }
+                        }
                 } catch {
                     print("JSON parsing error: \(error)")
                 }
